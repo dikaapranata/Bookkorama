@@ -36,13 +36,14 @@ if (isset($_POST['submit'])) {
 
     if ($valid) {
         // Kueri
-        $query = "INSERT INTO books 
-                    VALUES ('" . $isbn . "', 
-                            '" . $author . "', 
-                            '" . $title . "', 
-                            '" . $price . "', 
-                            (SELECT categoryid FROM categories WHERE name = '" . $category . "'))
-                ";
+        $query = "INSERT INTO books (isbn, author, title, price, categoryid)
+            VALUES ('" . $isbn . "',
+                    '" . $author . "',
+                    '" . $title . "',
+                    '" . $price . "',
+                    (SELECT categoryid FROM categories WHERE name = '" . $category . "'))
+        ";
+
 
         // Eksekusi kueri
         $result = $db->query($query);
@@ -50,12 +51,12 @@ if (isset($_POST['submit'])) {
             die('Could not query the database: <br/>' . $db->error . '<br>Query:' . $query);
         } else {
             $db->close();
-            header('Location: view_books.php');
+            header('Location: ../index.php');
         }
     }
 }
 ?>
-<?php include('../header.php') ?>
+<?php include('./header.php') ?>
 <br>
 <div class="card mt-4">
     <div class="card-header">Add Book Data</div>
@@ -120,11 +121,11 @@ if (isset($_POST['submit'])) {
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary" name="submit" value="submit">Submit</button>
-                <a href="view_books.php" class="btn btn-secondary">Cancel</a>
+                <a href="../index.php" class="btn btn-secondary">Cancel</a>
             </form>
         </div>
     </div>
-<?php include('../footer.php') ?>
+<?php include('./footer.php') ?>
 <?php
 $db->close();
 ?>

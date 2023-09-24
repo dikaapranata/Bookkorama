@@ -1,4 +1,4 @@
-<?php include('../header.php') ?>
+<?php include('./header.php') ?>
 <div class="card mt-5">
     <div class="card-header">Books Data</div>
     <div class="card-body">
@@ -15,7 +15,7 @@
             </tr>
             <?php
             // Include our login information
-            require_once('../lib/db_login.php');
+            require_once('../db.php');
 
             // TODO 1: Tuliskan dan eksekusi query
             $query = 'SELECT 
@@ -60,4 +60,4 @@
             ?>
     </div>
 </div>
-<?php include('../footer.php') ?>
+<?php include('./footer.php') ?>

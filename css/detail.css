@@ -1,29 +1,4 @@
 /* CSS untuk detail.php */
-.navbar>.container {
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: #261C0F;
-}
-
-/* Ganti warna latar belakang navbar */
-.custom-bg {
-    background-color: #261C0F;
-    /* Tambahkan properti lain sesuai kebutuhan */
-}
-
-/* Mengubah warna teks pada navbar */
-.navbar-nav .nav-link {
-    color: #D9D9D9; /* Ganti dengan warna teks yang Anda inginkan */
-}
-
-.navbar-brand {
-    color: #fff; /* Warna teks untuk brand/link utama */
-    margin: 0; 
-}
-
 
 body {
     font-family: Arial, sans-serif;
@@ -33,7 +8,7 @@ body {
 }
 
 h1 {
-    background-color: #594F43;
+    background-color: #333;
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -101,4 +76,3 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
-

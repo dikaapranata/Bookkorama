@@ -134,7 +134,7 @@
                     echo "<td>" . $rowBook['title'] . "</td>";
                     echo "<td>" . $rowBook['author'] . "</td>";
                     echo "<td>" . $rowBook['price'] . "</td>";
-                    echo '<td><a class="btn btn-warning btn-sm" href="./book_handler/edit_book.php?id=' . $rowBook['isbn'] . '">Edit</a>&nbsp;<a class="btn btn-danger btn-sm" href="./book_handler/confirm_delete_book.php?id=' . $rowBook['isbn'] . '">Delete</a></td>';
+                    echo '<td><a class="btn btn-warning btn-sm" href="./book_handler/edit_book.php?isbn=' . $rowBook['isbn'] . '">Edit</a>&nbsp;<a class="btn btn-danger btn-sm" href="./book_handler/confirm_delete_book.php?isbn=' . $rowBook['isbn'] . '">Delete</a></td>';
                     echo "</tr>";
                 }
             }

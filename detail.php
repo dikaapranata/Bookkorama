@@ -91,10 +91,10 @@
             echo "<p>Belum ada ulasan untuk buku ini.</p>";
         }
 
-        // Formulir untuk memberikan ulasan       
+        // Formulir untuk memberikan ulasan
     } else {
         echo "<p>ISBN buku tidak valid.</p>";
-    }// Proses pengiriman ulasan
+    } // Proses pengiriman ulasan
     if (isset($_POST['submit'])) {
         // Tangkap data ulasan dari formulir
         $rating = $_POST['rating'];
@@ -114,7 +114,7 @@
 
     $db->close();
     ?>
-    
+
 
 </body>
 
