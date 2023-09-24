@@ -20,12 +20,21 @@ require_once('./db.php');
                 <ul class="navbar-nav ml-auto">
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./index.php">Filter Pencarian Buku</a>
+                        <a class="nav-link" href="./index.php">Filter Buku</a>
                     <li class="nav-item">
                         <a class="nav-link" href="./data_order.php">Data Order</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./pembelian.php">Pembelian</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./view_books.php">Daftar Buku</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./view_order.php">View Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./search.php">Pencarian Buku</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./landingpage.php"><strong>Home<strong></a>
