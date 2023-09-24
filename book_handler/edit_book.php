@@ -1,79 +1,86 @@
 <?php
 require_once('../db.php');
 
-$isbn = $_GET['isbn'];
+$isbn = '';
+$author = '';
+$title = '';
+$price = '';
+$category = '';
 
-if (!isset($_POST['submit'])) {
-    $query = "SELECT b.isbn, b.author, b.title, b.price, c.name AS category_name 
+if (isset($_GET['isbn'])) {
+    $isbn = $_GET['isbn'];
+
+    if (!isset($_POST['submit'])) {
+        $query = "SELECT b.isbn, b.author, b.title, b.price, c.name AS category_name 
                     FROM books b
                     INNER JOIN categories AS c ON b.categoryid = c.categoryid
                     WHERE b.isbn='" . $isbn . "'";
-    $result = $db->query($query);
-    if (!$result) {
-        die("Could not query the database: <br />" . $db->error);
-    } else {
-        while ($row = $result->fetch_object()) {
-            $isbn = $row->isbn;
-            $author = $row->author;
-            $title = $row->title;
-            $price = $row->price;
-            $category = $row->category_name;
-        }
-    }
-} else {
-    $valid = TRUE;
-
-    $isbn = test_input($_POST['isbn']);
-    if ($isbn == '') {
-        $error_isbn = 'ISBN is required';
-        $valid = FALSE;
-    }
-
-    $author = test_input($_POST['author']);
-    if ($author == '') {
-        $error_author = 'Author is required';
-        $valid = FALSE;
-    }
-
-    $title = test_input($_POST['title']);
-    if ($title == '') {
-        $error_title = 'Title is required';
-        $valid = FALSE;
-    }
-
-    $price = test_input($_POST['price']);
-    if ($price == '') {
-        $error_price = 'Price is required';
-        $valid = FALSE;
-    }
-
-    $category = $_POST['category'] ?? '';
-    if ($category == '') {
-        $error_category = 'Category is required';
-        $valid = FALSE;
-    }
-
-    if ($valid) {
-        $query = "UPDATE books 
-                    SET isbn = '" . $isbn . "', 
-                        author = '" . $author . "',
-                        title = '" . $title . "',
-                        price = '" . $price . "',
-                        categoryid = (SELECT categoryid FROM categories WHERE name = '" . $category . "')
-                    WHERE isbn = '" . $isbn . "'
-                ";
         $result = $db->query($query);
         if (!$result) {
-            die("Could not query the database: <br />" . $db->error . '<br>Query: ' . $query);
+            die("Could not query the database: <br />" . $db->error);
         } else {
-            $db->close();
-            header('Location: view_books.php');
+            while ($row = $result->fetch_object()) {
+                $isbn = $row->isbn;
+                $author = $row->author;
+                $title = $row->title;
+                $price = $row->price;
+                $category = $row->category_name;
+            }
+        }
+    } else {
+        $valid = TRUE;
+
+        $isbn = test_input($_POST['isbn']);
+        if ($isbn == '') {
+            $error_isbn = 'ISBN is required';
+            $valid = FALSE;
+        }
+
+        $author = test_input($_POST['author']);
+        if ($author == '') {
+            $error_author = 'Author is required';
+            $valid = FALSE;
+        }
+
+        $title = test_input($_POST['title']);
+        if ($title == '') {
+            $error_title = 'Title is required';
+            $valid = FALSE;
+        }
+
+        $price = test_input($_POST['price']);
+        if ($price == '') {
+            $error_price = 'Price is required';
+            $valid = FALSE;
+        }
+
+        $category = $_POST['category'] ?? '';
+        if ($category == '') {
+            $error_category = 'Category is required';
+            $valid = FALSE;
+        }
+
+        if ($valid) {
+            $query = "UPDATE books 
+                        SET isbn = '" . $isbn . "', 
+                            author = '" . $author . "',
+                            title = '" . $title . "',
+                            price = '" . $price . "',
+                            categoryid = (SELECT categoryid FROM categories WHERE name = '" . $category . "')
+                        WHERE isbn = '" . $isbn . "'
+                    ";
+            $result = $db->query($query);
+            if (!$result) {
+                die("Could not query the database: <br />" . $db->error . '<br>Query: ' . $query);
+            } else {
+                $db->close();
+                header('Location: ../index.php');
+            }
         }
     }
 }
-
 ?>
-<?php include('../header.php') ?>
+<?php include('./header.php') ?>
 <br>
 <div class="card mt-4">
     <div class="card-header">Edit Book Data</div>
@@ -140,11 +147,11 @@ if (!isset($_POST['submit'])) {
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary" name="submit" value="submit">Submit</button>
-                <a href="view_books.php" class="btn btn-secondary">Cancel</a>
+                <a href="../index.php" class="btn btn-secondary">Cancel</a>
             </form>
         </div>
     </div>
-<?php include('../footer.php') ?>
+<?php include('./footer.php') ?>
 <?php
 $db->close();
 ?>
