@@ -2,7 +2,26 @@
 .container {
     margin: 0;
     padding: 0;
+    max-width: initial;
 }
+
+.navbar>.container {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #594F43 !important;
+    border-color: #594F43 !important;
+} 
+
+.btn-primary:hover {
+    background-color: #261C0F !important;
+}
+
 
 body, h1, form {
     margin: 0;
@@ -10,7 +29,7 @@ body, h1, form {
 }
 
 body {
-    font-family: 'Lora', serif;
+    font-family: Arial, sans-serif;
     background-color: #A6998A;
 }
 
@@ -19,7 +38,8 @@ h1 {
     color: #fff;
     padding: 10px;
     text-align: center;
-    font-family: 'Lora', serif;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
 }
 
 form {
@@ -29,12 +49,16 @@ form {
 }
 
 table {
-    width: 80%;
+    width: 80% !important;
     margin: 20px auto;
     border-collapse: collapse;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+}
+
+a {
+    margin-left: 0.5rem;
 }
 
 table, th, td {
@@ -113,6 +137,7 @@ input[type="submit"][name="cari"]:hover {
 /* Ganti warna latar belakang navbar */
 .custom-bg {
     background-color: #261C0F;
+    color: #fff;
     /* Tambahkan properti lain sesuai kebutuhan */
 }
 
@@ -123,6 +148,7 @@ input[type="submit"][name="cari"]:hover {
 
 .navbar-brand {
     color: #fff; /* Warna teks untuk brand/link utama */
+    margin: 0; 
 }
 
 
