@@ -3,7 +3,8 @@
 
 <head>
     <title>Filter Pencarian Buku</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
     <style>
     </style>
@@ -14,7 +15,8 @@
     <nav class="navbar navbar-expand-lg navbar-light custom-bg">
         <div class="container">
             <a class="navbar-brand" href="./index.php">Filter Pencarian Buku</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -30,7 +32,7 @@
             </div>
         </div>
     </nav>
-    
+
     <div class="container">
         <h1>Filter Pencarian Buku</h1>
 
@@ -108,9 +110,10 @@
 
         if ($resultCategory->num_rows > 0) {
             echo "<h2>Daftar Buku Berdasarkan Kategori:</h2>";
-            echo "<button onclick=\"toggleCategoryTable()\" class=\"btn btn-primary\">Klik</button>";
+            echo "<button onclick=\"toggleCategoryTable()\" class=\"btn btn-primary\">Klik untuk memperlihatkan/menyembunyikan tabel</button>";
+            echo "<a href=\"./book_handler/add_book.php\" class=\"btn btn-primary\">+ Add Book Data</a>";
             echo "<table id='categoryTable' class='table'>";
-            echo "<thead><tr><th>Category</th><th>ISBN</th><th>Title</th><th>Author</th><th>Price</th></tr></thead>";
+            echo "<thead><tr><th>Category</th><th>ISBN</th><th>Title</th><th>Author</th><th>Price</th><th>Action</th></tr></thead>";
             echo "<tbody>";
 
             while ($rowCategory = $resultCategory->fetch_assoc()) {
@@ -131,6 +134,7 @@
                     echo "<td>" . $rowBook['title'] . "</td>";
                     echo "<td>" . $rowBook['author'] . "</td>";
                     echo "<td>" . $rowBook['price'] . "</td>";
+                    echo '<td><a class="btn btn-warning btn-sm" href="./book_handler/edit_book.php?id=' . $rowBook['isbn'] . '">Edit</a>&nbsp;<a class="btn btn-danger btn-sm" href="./book_handler/confirm_delete_book.php?id=' . $rowBook['isbn'] . '">Delete</a></td>';
                     echo "</tr>";
                 }
             }
