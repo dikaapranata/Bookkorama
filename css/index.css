@@ -1,0 +1,129 @@
+/* Reset tampilan default */
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+body, h1, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lora', serif;
+    background-color: #A6998A;
+}
+
+h1 {
+    background-color: #594F43;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Lora', serif;
+}
+
+form {
+    margin: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+input[type="date"],
+input[type="submit"] {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+p {
+    text-align: center;
+    font-family: 'Lora', serif;
+}
+
+/* Stylize category select */
+select[name="categoryid"] {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px; /* Sesuaikan lebar sesuai preferensi Anda */
+    font-size: 16px; /* Sesuaikan ukuran font sesuai preferensi Anda */
+    background-color: #fff;
+}
+
+/* Style the search button */
+input[type="submit"][name="cari"] {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #594F43 ;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"][name="cari"]:hover {
+    background-color: #261C0F;
+}
+
+/* Mengubah warna latar belakang button "Klik" */
+.click {
+    padding: 10px 20px;
+    background-color: #594F43; /* Ganti dengan warna yang Anda inginkan */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+/* Hover state untuk button "Klik" */
+.click:hover {
+    background-color: #261C0F; /* Warna saat di-hover, ganti sesuai keinginan Anda */
+}
+
+
+/* Ganti warna latar belakang navbar */
+.custom-bg {
+    background-color: #261C0F;
+    /* Tambahkan properti lain sesuai kebutuhan */
+}
+
+/* Mengubah warna teks pada navbar */
+.navbar-nav .nav-link {
+    color: #D9D9D9; /* Ganti dengan warna teks yang Anda inginkan */
+}
+
+.navbar-brand {
+    color: #fff; /* Warna teks untuk brand/link utama */
+}
+
+
+
