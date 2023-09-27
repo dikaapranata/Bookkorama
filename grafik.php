@@ -58,10 +58,7 @@
             }
         });
     </script>
-    <!-- Tombol kembali ke halaman data_order.php -->
-    <form method="POST" action="data_order.php">
-        <input type="submit" name="back" value="Kembali">
-    </form>
+
 </body>
 
 </html>

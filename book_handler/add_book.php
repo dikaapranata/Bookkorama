@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
             die('Could not query the database: <br/>' . $db->error . '<br>Query:' . $query);
         } else {
             $db->close();
-            header('Location: ../index.php');
+            header('Location: view_books.php');
         }
     }
 }
@@ -121,7 +121,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary" name="submit" value="submit">Submit</button>
-                <a href="../index.php" class="btn btn-secondary">Cancel</a>
+                <a href="view_books.php" class="btn btn-secondary">Cancel</a>
             </form>
         </div>
     </div>

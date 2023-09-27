@@ -5,10 +5,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light custom-bg">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.php">Filter Buku</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./data_order.php">Data Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pembelian.php">Pembelian</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./view_order.php">View Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./search.php"><strong>Pencarian Buku</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./landingpage.php">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <div class="card mt-4">
             <div class="card-header">Find Book</div>
@@ -29,7 +60,9 @@
 
                     <div class="form-group">
                         <label for="search" class="fw-bold">Search</label>
-                        <input type="search" id="search" name="search" class="form-control rounded" placeholder="Input ISBN / Author / Title" aria-label="Search" aria-describedby="search-addon" />
+                        <input type="search" id="search" name="search" class="form-control rounded"
+                            placeholder="Input ISBN / Author / Title" aria-label="Search"
+                            aria-describedby="search-addon" />
                     </div>
                     <br>
 
@@ -38,11 +71,13 @@
                         <div class="d-flex gap-3">
                             <div>
                                 <label for="min_price">Minimum Price:</label>
-                                <input class="form-control rounded " type="number" id="min_price" name="min_price" min="0">
+                                <input class="form-control rounded " type="number" id="min_price" name="min_price"
+                                    min="0">
                             </div>
                             <div>
                                 <label for="max_price">Maximum Price:</label>
-                                <input class="form-control rounded " type="number" id="max_price" name="max_price" min="0">
+                                <input class="form-control rounded " type="number" id="max_price" name="max_price"
+                                    min="0">
                             </div>
                         </div>
                     </div>
@@ -68,13 +103,13 @@
                                 $category = $_POST['category'];
                                 $whereClauses[] = " (categoryid = '$category')";
                             }
-                            
-                            if (!empty($_POST['min_price'])){
+
+                            if (!empty($_POST['min_price'])) {
                                 $minPrice = (float) $_POST['min_price'];
                                 $whereClauses[] = " (price >= $minPrice)";
                             }
 
-                            if (!empty($_POST['max_price'])){
+                            if (!empty($_POST['max_price'])) {
                                 $maxPrice = (float) $_POST['max_price'];
                                 $whereClauses[] = " (price <= $maxPrice)";
                             }
@@ -130,7 +165,9 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

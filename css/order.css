@@ -2,7 +2,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #FFF;
+}
+
+.navbar>.container {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #FFF;
 }
 
 h1 {
