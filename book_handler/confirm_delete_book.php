@@ -29,7 +29,7 @@ if (isset($_POST['delete'])) {
 
     if ($result) {
         $db->close();
-        header('Location: ../index.php');
+        header('Location: view_books.php');
         exit;
     } else {
         die("Error deleting book: " . $db->error);
@@ -43,28 +43,18 @@ if (isset($_POST['delete'])) {
     <div class="card-body">
         <h4>Are you sure you want to delete this book?</h4>
         <?php if ($book) { ?>
-            <p><strong>ISBN: </strong>
-                <?= $book->isbn ?>
-            </p>
-            <p><strong>Title: </strong>
-                <?= $book->title ?>
-            </p>
-            <p><strong>Author: </strong>
-                <?= $book->author ?>
-            </p>
-            <p><strong>Price: </strong>
-                <?= $book->price ?>
-            </p>
-            <p><strong>Category: </strong>
-                <?= $book->category_name ?>
-            </p>
+            <p><strong>ISBN: </strong><?= $book->isbn ?></p>
+            <p><strong>Title: </strong><?= $book->title ?></p>
+            <p><strong>Author: </strong><?= $book->author ?></p>
+            <p><strong>Price: </strong><?= $book->price ?></p>
+            <p><strong>Category: </strong><?= $book->category_name ?></p>
         <?php } else { ?>
             <p>Book not found.</p>
         <?php } ?>
 
         <form action="<?= $_SERVER['PHP_SELF'] . '?isbn=' . $isbn ?>" method="post">
             <button type="submit" class="btn btn-danger" name="delete">Delete</button>
-            <a class="btn btn-secondary" href="../index.php">Cancel</a>
+            <a class="btn btn-secondary" href="view_books.php">Cancel</a>
         </form>
     </div>
 </div>

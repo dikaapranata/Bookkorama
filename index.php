@@ -5,7 +5,7 @@
     <title>Filter Pencarian Buku</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="./css/index.css">
     <style>
     </style>
 </head>
@@ -27,6 +27,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./pembelian.php">Pembelian</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./landingpage.php">dashboard (list Tugas)</a>
                     </li>
                 </ul>
             </div>
@@ -134,7 +137,7 @@
                     echo "<td>" . $rowBook['title'] . "</td>";
                     echo "<td>" . $rowBook['author'] . "</td>";
                     echo "<td>" . $rowBook['price'] . "</td>";
-                    echo '<td><a class="btn btn-warning btn-sm" href="./book_handler/edit_book.php?isbn=' . $rowBook['isbn'] . '">Edit</a>&nbsp;<a class="btn btn-danger btn-sm" href="./book_handler/confirm_delete_book.php?isbn=' . $rowBook['isbn'] . '">Delete</a></td>';
+                    echo '<td><a class="btn btn-warning btn-sm" href="./book_handler/edit_book.php?id=' . $rowBook['isbn'] . '">Edit</a>&nbsp;<a class="btn btn-danger btn-sm" href="./book_handler/confirm_delete_book.php?id=' . $rowBook['isbn'] . '">Delete</a></td>';
                     echo "</tr>";
                 }
             }

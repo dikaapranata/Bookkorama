@@ -5,7 +5,7 @@
     <title>Detail Buku</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="./css/detail.css">
 </head>
 
 <body>
@@ -91,7 +91,7 @@
             echo "<p>Belum ada ulasan untuk buku ini.</p>";
         }
 
-        // Formulir untuk memberikan ulasan
+        // Formulir untuk memberikan ulasan       
     } else {
         echo "<p>ISBN buku tidak valid.</p>";
     } // Proses pengiriman ulasan

@@ -74,7 +74,7 @@ if (isset($_GET['isbn'])) {
                 die("Could not query the database: <br />" . $db->error . '<br>Query: ' . $query);
             } else {
                 $db->close();
-                header('Location: ../index.php');
+                header('Location: view_books.php');
             }
         }
     }
@@ -92,37 +92,37 @@ if (isset($_GET['isbn'])) {
                 <div class="error">
                     <?php if (isset($error_isbn))
                         echo $error_isbn ?>
-                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="author">Author:</label>
-                    <input type="text" class="form-control" id="author" name="author" value="<?= $author; ?>">
+            </div>
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <input type="text" class="form-control" id="author" name="author" value="<?= $author; ?>">
                 <div class="error">
                     <?php if (isset($error_author))
                         echo $error_author ?>
-                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="title">Title:</label>
-                    <input type="text" class="form-control" id="title" name="title" value="<?= $title; ?>">
+            </div>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" name="title" value="<?= $title; ?>">
                 <div class="error">
                     <?php if (isset($error_title))
                         echo $error_title ?>
-                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="price">Price:</label>
-                    <input type="number" class="form-control" id="price" name="price" step="0.01" value="<?= $price; ?>">
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" class="form-control" id="price" name="price" step="0.01" value="<?= $price; ?>">
                 <div class="error">
                     <?php if (isset($error_price))
                         echo $error_price ?>
-                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="category">Category:</label>
-                    <select name="category" id="category" class="form-control">
-                        <option value="" selected disabled>--Select a Category--</option>
-                        <?php
+            </div>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <select name="category" id="category" class="form-control">
+                    <option value="" selected disabled>--Select a Category--</option>
+                    <?php
                     $query = 'SELECT name FROM categories';
                     $result = $db->query($query);
 
@@ -143,14 +143,14 @@ if (isset($_GET['isbn'])) {
                 <div class="error">
                     <?php if (isset($error_category))
                         echo $error_category ?>
-                    </div>
                 </div>
-                <br>
-                <button type="submit" class="btn btn-primary" name="submit" value="submit">Submit</button>
-                <a href="../index.php" class="btn btn-secondary">Cancel</a>
-            </form>
-        </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" name="submit" value="submit">Submit</button>
+            <a href="view_books.php" class="btn btn-secondary">Cancel</a>
+        </form>
     </div>
+</div>
 <?php include('./footer.php') ?>
 <?php
 $db->close();

@@ -3,11 +3,43 @@
 
 <head>
     <title>Pembelian Buku</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="css/beli.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/beli.css">
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light custom-bg">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.php">Filter Buku</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./data_order.php">Data Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pembelian.php"><strong>Pembelian</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./view_order.php">View Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./search.php">Pencarian Buku</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./landingpage.php">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <h1>Pembelian Buku</h1>
 
     <?php
@@ -56,7 +88,7 @@
     }
 
     // Query untuk mengambil semua data buku
-    $query = "SELECT ISBN, Title, Author, Price, status FROM books";
+    $query = "SELECT ISBN, Title, Author, Price FROM books";
 
     $result = $db->query($query);
 
